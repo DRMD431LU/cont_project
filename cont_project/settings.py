@@ -54,7 +54,7 @@ ROOT_URLCONF = 'cont_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -66,7 +66,6 @@ TEMPLATES = [
         },
     },
 ]
-
 WSGI_APPLICATION = 'cont_project.wsgi.application'
 
 
@@ -75,9 +74,9 @@ WSGI_APPLICATION = 'cont_project.wsgi.application'
 
 DATABASES = {
    'default': {
-      'ENGINE': 'djongo',
-      'NAME': 'cont_db',
-   }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
 
 
